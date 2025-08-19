@@ -1,0 +1,223 @@
+/* ==========================================================================
+   RESPONSIVE STYLES
+   ==========================================================================
+    -   Target: Membuat layout beradaptasi untuk Tablet dan Mobile.
+    -   Breakpoint 1: Large Desktops (Kontainer sedikit lebih lebar)
+    -   Breakpoint 2: Tablets & Small Desktops (<= 1200px)
+    -   Breakpoint 3: Tablets (<= 992px)
+    -   Breakpoint 4: Mobile Devices (<= 768px)
+    -   Breakpoint 5: Small Mobile Devices (<= 576px)
+   ========================================================================== */
+
+/* --- Breakpoint 1: Large Desktops --- */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+/* --- Breakpoint 2: Tablets & Small Desktops (<= 1200px) --- */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* --- Breakpoint 3: Tablets (<= 992px) --- */
+@media (max-width: 992px) {
+    html {
+        font-size: 95%;
+    }
+
+    .container {
+        max-width: 720px;
+    }
+
+    /* --- Navbar untuk Tablet --- */
+    .navbar__nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--color-white);
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        padding: 1rem 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        border-top: 1px solid var(--color-bg-medium);
+    }
+
+    .navbar__nav.active {
+        display: flex;
+    }
+
+    .navbar__item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar__link {
+        display: block;
+        padding: 1rem;
+    }
+
+    .navbar__link.active::after {
+        display: none;
+    }
+
+    .navbar__toggler {
+        display: block;
+    }
+
+    /* --- Layout Sections --- */
+    .hero__container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero__content {
+        align-items: center;
+    }
+    
+    .hero__description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero__cta-group {
+        justify-content: center;
+    }
+
+    .hero__image-wrapper {
+        margin-bottom: 2rem;
+        max-width: 350px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dual-column {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .dual-column__image-wrapper {
+        order: -1;
+        max-width: 500px;
+    }
+    
+    .framework-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- Breakpoint 4: Mobile Devices (<= 768px) --- */
+@media (max-width: 768px) {
+    html {
+        font-size: 90%;
+    }
+    
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+
+    .container {
+        max-width: 540px;
+    }
+
+    /* --- Timeline untuk Mobile --- */
+    .timeline::after {
+        left: 20px;
+    }
+
+    .timeline__item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 1rem;
+    }
+
+    .timeline__item:nth-child(odd) {
+        left: 0;
+        text-align: left;
+    }
+
+    .timeline__item:nth-child(even) {
+        left: 0;
+        padding-left: 50px;
+    }
+
+    .timeline__item::after {
+        left: 10px;
+    }
+
+    /* --- Contact Page --- */
+    .contact-layout {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    /* --- Footer --- */
+    .footer__container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer__social {
+        justify-content: center;
+    }
+
+    /* --- Project Grid --- */
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* --- Framework Grid --- */
+    .framework-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dual-concept {
+        flex-direction: column;
+    }
+}
+
+/* --- Breakpoint 5: Small Mobile Devices (<= 576px) --- */
+@media (max-width: 576px) {
+    :root {
+        --header-height: 70px;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+    
+    .hero {
+        padding: 2rem 0;
+    }
+
+    .hero__title {
+        font-size: 2.8rem;
+    }
+    
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    
+    .btn {
+        padding: 0.7rem 1.5rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .hero__cta-group {
+        flex-direction: column;
+    }
+    
+    .navbar {
+        padding: 0 1rem;
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
